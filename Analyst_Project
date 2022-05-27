@@ -1,0 +1,93 @@
+--Data_analyst_jobs
+/* Exercise 1: 1793
+Select count(*) from data_analyst_jobs
+*/
+
+
+/*Exercise 2a
+Select * from data_analyst_jobs
+Limit 10
+
+Exercise 2b: ExxonMobil
+Select company from data_analyst_jobs
+Limit 10
+*/
+
+/*Exercise 3a : 21 
+Select count(location) from data_analyst_jobs
+Where location ='TN';
+
+Exercise 3b: 27
+Select count(location) from data_analyst_jobs
+Where location in ('TN', 'KY');
+*/
+
+/*Exercise 4: 3 
+Select count(*) from data_analyst_jobs
+Where location ='TN'
+and star_rating > '4'
+*/
+
+/*Exercise 5: 151 
+Select count(*) from data_analyst_jobs
+Where review_count between 500 and 1000;
+*/
+
+/* Exercise 6: Nevada 
+Select Avg(star_rating) as avg_rating, 
+location as state from data_analyst_jobs
+Where star_rating notnull
+Group by location
+Order by avg_rating DESC;
+*/
+
+/* Exercise 7: 881 
+Select count(distinct(title)) from data_analyst_jobs;
+*/
+
+/* Exercise 8: 230 
+Select count(distinct(title)) from data_analyst_jobs
+Where location = 'CA';
+*/
+
+/*Exercise 9 and 10: Unilever, 4.199
+Select count(distinct(company)) from data_analyst_jobs
+Where review_count > '5000'; 
+
+Select avg(star_rating) as avg_rating, company 
+from data_analyst_jobs
+Where review_count > '5000' and company notnull
+Group by company
+Order by avg_rating DESC;
+*/
+
+/*Exercise 11: 774
+Select count(distinct(title)) from data_analyst_jobs
+Where title like '%Analyst%' 
+or title like '%ANALYST%'
+or title like '%analyst%';
+*/
+
+/* Exercise 12: 4, Tableau
+Select title from data_analyst_jobs
+Where title not like '%Analyst%' 
+and title not like '%ANALYST%'
+and title not like '%analyst%'
+and title not like '%Analytics%'
+and title not like '%ANALYTICS%'
+and title not like '%analytics%';
+*/
+
+/* BonusA: Internet, Healthcare, Banks BonusB 214
+Select domain, count(distinct(title)) as hard_to_fill from data_analyst_jobs
+Where days_since_posting > '21'
+and skill like '%SQL%'
+and domain notnull
+Group by domain
+order by hard_to_fill DESC
+
+Select count(distinct(title)) as hard_to_fill from data_analyst_jobs
+Where days_since_posting > '21'
+and skill like '%SQL%'
+and domain notnull
+*/
